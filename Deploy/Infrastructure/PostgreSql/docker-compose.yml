@@ -1,0 +1,23 @@
+version: '3.7'
+
+networks:
+  default:
+    name: dark-kanban-network
+
+volumes:
+  db_volume:
+
+
+services:
+  postgreDb:
+    container_name: dark-kanban-postgreDb
+    image: postgres:13.4
+    ports:
+      - "5432:5432"
+    restart: "always"
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "rootuser"
+      POSTGRES_PASSWORD: "rootuser"
+      POSTGRES_DB: "darkkanbandb"

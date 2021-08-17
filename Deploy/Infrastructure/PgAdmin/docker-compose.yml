@@ -1,0 +1,22 @@
+version: '3.7'
+
+networks:
+  default:
+    name: dark-kanban-network
+
+
+services:
+  pgadmin4:
+    container_name: dark-kanban-pgadmin4
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: rootuser@nasty.silence
+      PGADMIN_DEFAULT_PASSWORD: rootuser
+    ports:
+      - "5457:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    restart: unless-stopped
+
+volumes:
+  pgadmin-data:
