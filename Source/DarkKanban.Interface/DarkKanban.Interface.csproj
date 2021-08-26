@@ -6,4 +6,8 @@
         <RootNamespace>DarkKanban</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DarkKanban.Core.Database\DarkKanban.Core.Database.csproj" />
+    </ItemGroup>
+
 </Project>
