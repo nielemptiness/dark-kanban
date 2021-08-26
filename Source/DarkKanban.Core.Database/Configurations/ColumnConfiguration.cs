@@ -19,6 +19,9 @@ namespace DarkKanban.Core.Database.Configurations
                 .HasMaxLength(30)
                 .IsRequired();
 
+            builder.Property(c => c.Type)
+                .IsRequired();
+
             builder.HasMany(c => c.Records)
                 .WithOne(r => r.Column);
 

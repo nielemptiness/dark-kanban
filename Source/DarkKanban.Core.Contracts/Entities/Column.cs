@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DarkKanban.Core.Contracts.Enums;
 
 namespace DarkKanban.Core.Contracts.Entities
 {
@@ -12,6 +13,7 @@ namespace DarkKanban.Core.Contracts.Entities
         
         public virtual ICollection<Record> Records { get; set; }
         public Guid BoardId { get; set; }
+        public ColumnType Type { get; set; }
         public virtual Board Board { get; set; }
     }
 }
