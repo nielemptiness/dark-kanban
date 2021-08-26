@@ -1,8 +1,9 @@
 using System;
+using DarkKanban.Core.Contracts.Interfaces;
 
 namespace DarkKanban.Core.Contracts.Models
 {
-    public class BoardModel
+    public class BoardModel : IKanbanObject
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
