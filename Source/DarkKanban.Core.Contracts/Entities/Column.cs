@@ -1,8 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace DarkKanban.Core.Database.Domain
+namespace DarkKanban.Core.Contracts.Entities
 {
     public class Column : Entity
     {

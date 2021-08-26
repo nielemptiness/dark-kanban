@@ -1,4 +1,4 @@
-﻿using DarkKanban.Core.Database.Domain;
+﻿using DarkKanban.Core.Contracts.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

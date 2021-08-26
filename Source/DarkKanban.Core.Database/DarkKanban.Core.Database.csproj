@@ -5,10 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Repositories" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.7" />
       <PackageReference Include="URF.Core.EF.Trackable" Version="5.0.0" />
@@ -16,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\DarkKanban.Core.Contracts\DarkKanban.Core.Contracts.csproj" />
+      <ProjectReference Include="..\DarkKanban.Core.Domain\DarkKanban.Core.Domain.csproj" />
     </ItemGroup>
 
 </Project>

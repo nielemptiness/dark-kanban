@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DarkKanban.Core.Database.Domain
+namespace DarkKanban.Core.Contracts.Entities
 {
     public class Record : Entity
     {

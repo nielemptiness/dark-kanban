@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using DarkKanban.Core.Contracts.Interfaces;
+using DarkKanban.Core.Contracts.Interfaces.Models;
 
-namespace DarkKanban.Core.Database.Domain
+namespace DarkKanban.Core.Contracts.Entities
 {
     public class Entity : URF.Core.EF.Trackable.Entity, IKanbanObject
     {

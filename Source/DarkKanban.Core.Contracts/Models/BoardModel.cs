@@ -1,5 +1,6 @@
 using System;
 using DarkKanban.Core.Contracts.Interfaces;
+using DarkKanban.Core.Contracts.Interfaces.Models;
 
 namespace DarkKanban.Core.Contracts.Models
 {

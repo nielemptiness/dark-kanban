@@ -1,4 +1,4 @@
-﻿namespace DarkKanban.Core.Contracts.Interfaces
+﻿namespace DarkKanban.Core.Contracts.Interfaces.Models
 {
     public interface IKanbanObject : IIdentity
     {
