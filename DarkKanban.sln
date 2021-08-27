@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkKanban.Core.Database", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkKanban.Core.Contracts", "Source\DarkKanban.Core.Contracts\DarkKanban.Core.Contracts.csproj", "{451E7DEB-717E-48B5-8E47-7E41E0697957}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkKanban.Core.Services", "Source\DarkKanban.Core.Services\DarkKanban.Core.Services.csproj", "{8575907E-9787-4CB0-9413-958CE18CD884}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{451E7DEB-717E-48B5-8E47-7E41E0697957}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451E7DEB-717E-48B5-8E47-7E41E0697957}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451E7DEB-717E-48B5-8E47-7E41E0697957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8575907E-9787-4CB0-9413-958CE18CD884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8575907E-9787-4CB0-9413-958CE18CD884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8575907E-9787-4CB0-9413-958CE18CD884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8575907E-9787-4CB0-9413-958CE18CD884}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A2731687-7D1A-46D4-9F68-796210D786DD} = {C7F6BA57-8090-47D9-B726-65A7A58380CE}
@@ -51,5 +57,6 @@ Global
 		{7C4C51CB-F08E-4CC4-BC4E-A55F817770E4} = {A2731687-7D1A-46D4-9F68-796210D786DD}
 		{5C8C0648-96E5-4A38-A4DF-43AB1620D797} = {13184107-978F-4767-9673-9F200A6873AA}
 		{451E7DEB-717E-48B5-8E47-7E41E0697957} = {13184107-978F-4767-9673-9F200A6873AA}
+		{8575907E-9787-4CB0-9413-958CE18CD884} = {13184107-978F-4767-9673-9F200A6873AA}
 	EndGlobalSection
 EndGlobal

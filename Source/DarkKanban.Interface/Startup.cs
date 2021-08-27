@@ -1,4 +1,5 @@
 using DarkKanban.Core.Database;
+using DarkKanban.Core.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,7 @@ namespace DarkKanban
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDarkKanbanDataAccess(Configuration);
+            services.AddCoreServices();
             services.AddRazorPages();
         }
 
