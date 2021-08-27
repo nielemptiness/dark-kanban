@@ -10,7 +10,7 @@ namespace DarkKanban.Core.Database.Context
         private const string ConnectionStringName = "DbConfig__ConnectionString";
 
         private const string DefaultLocalConnection =
-            "User ID =rootuser;Password=rootuser;Server=dark-kanban-postgreDb;Port=5432;Database=darkkanbandb;Integrated Security=true;Pooling=true;";
+            "User ID=rootuser;Password=rootuser;Server=localhost;Port=5432;Database=darkkanbandb;Integrated Security=true;Pooling=true;Include Error Detail=true;";
         
         public KanbanDbContext CreateDbContext(string[] args)
         {

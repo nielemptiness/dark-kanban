@@ -19,7 +19,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\DarkKanban.Core.Contracts\DarkKanban.Core.Contracts.csproj" />
-      <ProjectReference Include="..\DarkKanban.Core.Domain\DarkKanban.Core.Domain.csproj" />
     </ItemGroup>
 
 </Project>
