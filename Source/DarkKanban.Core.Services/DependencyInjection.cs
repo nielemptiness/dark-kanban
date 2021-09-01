@@ -20,6 +20,7 @@ namespace DarkKanban.Core.Services
                         return name != null && name.StartsWith("DarkKanban.Core");
                     }).ToArray();
 
+            services.AddAutoMapper(domainAssemblies);
             services.AddMediatR(domainAssemblies);
             services.AddScoped<IBoardService, BoardService>();
             services.AddScoped<IColumnService, ColumnService>();

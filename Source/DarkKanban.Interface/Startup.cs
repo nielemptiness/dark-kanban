@@ -22,6 +22,7 @@ namespace DarkKanban
         {
             services.AddDarkKanbanDataAccess(Configuration);
             services.AddCoreServices();
+            services.AddControllers();
             services.AddRazorPages();
         }
 
@@ -46,7 +47,10 @@ namespace DarkKanban
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
+            app.UseEndpoints(endpoints => { 
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+            });
         }
     }
 }

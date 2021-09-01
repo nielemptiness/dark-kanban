@@ -18,7 +18,11 @@ namespace DarkKanban.Core.Services.Board
                 .ForMember(x=>x.Description, 
                     o => o.MapFrom(x=>x.Description));
 
-            CreateMap<List<Contracts.Entities.Board>, List<EntityShortInfoModel>>().ReverseMap();
+            CreateMap<Contracts.Entities.Board, EntityShortInfoModel>()
+                .ForMember(x=>x.Id, 
+                    o=>o.MapFrom(x=>x.Id))
+                .ForMember(x=>x.Name, 
+                    o => o.MapFrom(x=>x.Name));
         }
     }
 }
