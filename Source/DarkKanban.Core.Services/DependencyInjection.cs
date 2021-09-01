@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using DarkKanban.Core.Contracts.Interfaces.Services;
 using DarkKanban.Core.Services.Board;
+using DarkKanban.Core.Services.Column;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,7 +12,6 @@ namespace DarkKanban.Core.Services
     {
         public static IServiceCollection AddCoreServices(this IServiceCollection services)
         {
-            
             var domainAssemblies =
                 AppDomain.CurrentDomain.GetAssemblies()
                     .Where(arg =>
@@ -22,6 +22,7 @@ namespace DarkKanban.Core.Services
 
             services.AddMediatR(domainAssemblies);
             services.AddScoped<IBoardService, BoardService>();
+            services.AddScoped<IColumnService, ColumnService>();
             
             return services;
         }
