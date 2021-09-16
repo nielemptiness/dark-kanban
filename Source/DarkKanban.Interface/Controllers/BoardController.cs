@@ -19,6 +19,13 @@ namespace DarkKanban.Controllers
             _mediator = mediator;
         }
 
+        // [HttpGet("/view/{id:guid}")]
+        // public async Task<ActionResult<BoardModel>> GetBoardView()
+        // {
+        //     var result = await 
+        // }
+
+
         [HttpGet]
         public async Task<ActionResult<GetBoardsResponse>> GetAllBoards()
         {

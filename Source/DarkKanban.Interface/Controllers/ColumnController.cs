@@ -20,7 +20,7 @@ namespace DarkKanban.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("/{boardId:guid}")]
+        [HttpGet("/{boardId:guid}/columns")]
         public async Task<ActionResult<GetColumnsResponse>> GetAll([FromRoute] Guid boardId, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(new GetColumnsQuery { BoardId = boardId }, cancellationToken);

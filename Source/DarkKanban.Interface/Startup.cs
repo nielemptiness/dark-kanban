@@ -42,6 +42,7 @@ namespace DarkKanban
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCors();
 
             app.UseRouting();
 
