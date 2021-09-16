@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using AutoMapper;
 using DarkKanban.Core.Contracts.Models;
+using DarkKanban.Core.Contracts.Responses;
 
 namespace DarkKanban.Core.Services.Board
 {
@@ -8,7 +9,7 @@ namespace DarkKanban.Core.Services.Board
     {
         public BoardMappingProfile()
         {
-            CreateMap<Contracts.Entities.Board, BoardModel>()
+            CreateMap<Contracts.Entities.Board, GetBoardResponse>()
                 .ForMember(x => x.Columns, 
                     opt => opt.MapFrom(x => x.Columns))
                 .ForMember(x=> x.Id,
@@ -16,7 +17,9 @@ namespace DarkKanban.Core.Services.Board
                 .ForMember(x=>x.Name,
                     o => o.MapFrom(x=>x.Name))
                 .ForMember(x=>x.Description, 
-                    o => o.MapFrom(x=>x.Description));
+                    o => o.MapFrom(x=>x.Description))
+                .ForMember(x=>x.Columns,
+                    o => o.MapFrom(x=>x.Columns));
 
             CreateMap<Contracts.Entities.Board, EntityShortInfoModel>()
                 .ForMember(x=>x.Id, 

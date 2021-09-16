@@ -22,6 +22,14 @@ namespace DarkKanban.Core.Services.Column
                     o => o.MapFrom(x=>x.Id))
                 .ForMember(x=>x.Name,
                     o => o.MapFrom(x=>x.Name));
+            
+            CreateMap<Contracts.Entities.Column, ColumnShortInfo>()
+                .ForMember(x=>x.Id, 
+                    o => o.MapFrom(x=>x.Id))
+                .ForMember(x=>x.Name,
+                    o => o.MapFrom(x=>x.Name))
+                .ForMember(x=>x.Type,
+                    o => o.MapFrom(x=>x.Type));
         }
     }
 }
