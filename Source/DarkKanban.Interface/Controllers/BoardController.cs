@@ -1,8 +1,10 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using DarkKanban.Core.Contracts.Models;
 using DarkKanban.Core.Contracts.Responses;
 using DarkKanban.Core.Services.Board.Queries;
+using DarkKanban.Core.Services.BoardView.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,24 +21,26 @@ namespace DarkKanban.Controllers
             _mediator = mediator;
         }
 
-        // [HttpGet("/view/{id:guid}")]
-        // public async Task<ActionResult<BoardModel>> GetBoardView()
-        // {
-        //     var result = await 
-        // }
+         [HttpGet("view/{id:guid}")]
+         public async Task<ActionResult<BoardModel>> GetBoardView([FromRoute] Guid id, CancellationToken cancellationToken)
+         {
+             var result = await _mediator.Send(new GetBoardViewQuery { Id = id }, cancellationToken);
+
+             return result;
+         }
 
 
         [HttpGet]
-        public async Task<ActionResult<GetBoardsResponse>> GetAllBoards()
+        public async Task<ActionResult<GetBoardsResponse>> GetAllBoards(CancellationToken cancellationToken)
         {
-            var result = await _mediator.Send(new GetBoardsQuery());
+            var result = await _mediator.Send(new GetBoardsQuery(), cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("/{id:guid}")]
-        public async Task<ActionResult<BoardModel>> GetBoard([FromRoute] Guid id)
+        [HttpGet("{id:guid}")]
+        public async Task<ActionResult<GetBoardResponse>> GetBoard([FromRoute] Guid id, CancellationToken cancellationToken)
         {
-            return Ok(await _mediator.Send(new GetBoardQuery { Id = id }));
+            return Ok(await _mediator.Send(new GetBoardQuery { Id = id }, cancellationToken));
         }
     }
 }
