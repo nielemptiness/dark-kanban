@@ -1,3 +1,5 @@
+using DarkKanban.Core.Database;
+using DarkKanban.Core.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -13,11 +15,14 @@ namespace DarkKanban
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDarkKanbanDataAccess(Configuration);
+            services.AddCoreServices();
+            services.AddControllers();
             services.AddRazorPages();
         }
 
@@ -37,12 +42,16 @@ namespace DarkKanban
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCors();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
+            app.UseEndpoints(endpoints => { 
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+            });
         }
     }
 }
