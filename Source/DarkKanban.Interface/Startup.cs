@@ -23,7 +23,7 @@ namespace DarkKanban
             services.AddDarkKanbanDataAccess(Configuration);
             services.AddCoreServices();
             services.AddControllers();
-            services.AddRazorPages();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,23 +33,15 @@ namespace DarkKanban
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-
+            
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseCors();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { 
-                endpoints.MapRazorPages();
+            app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
             });
         }
